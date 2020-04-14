@@ -67,6 +67,10 @@ app.use((req, res, next) => {
 
 // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);
+// this tells express to use our routes file anytime anyone goes to / anything. 
+// you can set up multiple routers though to keep things clean for example...
+// app.use('/admin', adminRoutes);
+// which would then target the specific routes in that file when the url is /admin...
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
